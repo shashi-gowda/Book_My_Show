@@ -3,7 +3,7 @@ class ticket_counter:
         print(' Welcome to Book-My-Show '.center(40, '*'))
         self.rows = input("--> Enter No.of Rows: ")  # no of rows in theatre
         self.columns = input("--> Enter No.of Columns: ")  # no of columns in rows
-        while self.rows=='0' or self.columns=='0' or self.rows.isdigit() == False or self.columns.isdigit() == False:  ##added to check 0 input as wel
+        while self.rows=='0' or self.columns=='0' or self.rows.isdigit() == False or self.columns.isdigit() == False:
             print('\n** Only Number inputs are allowed **')
             self.rows = input('--> Enter No. of Rows: ')
             self.columns = input('--> Enter No. of columns: ')
@@ -72,15 +72,15 @@ class ticket_counter:
             self.age = int(self.age)
 
             self.gender = input('--> Please Select Your Gender Male/Female/Other: ')
-            while self.gender.casefold() not in ['male', 'female', 'other']:  # casefold() is similar to str.lower()
+            while self.gender.casefold() not in ['male', 'female', 'other']:
                 print('Please Choose Correct Gender!!')
                 self.gender = input('--> Enter your Gender: ')
                 continue  ##Continue is for exiting loop##
 
             self.phone = input('--> Please Enter your phone number: ')
-            while self.phone.isdigit() == False:  # isdigit checks if the enterd string is number or not
+            while self.phone.isdigit() == False:
                 print('Please Enter Your phone Number in Numbers only!')
-                self.phone = input('--> Please Enter Your Phone Number: ')  # not using int because isdigit won't work on int
+                self.phone = input('--> Please Enter Your Phone Number: ')
                 continue
             self.phone = int(self.phone)
 
@@ -102,8 +102,7 @@ class ticket_counter:
                     if self.choose == 'yes':
                         self.current_income += 10
                         self.row[self.r - 1][self.c - 1] = 'B' #B replaces S
-                        self.details[(self.r, self.c)] = [self.name.capitalize(), self.age, self.gender.capitalize(),
-                                                          self.phone]  # dict of user details created for r,c
+                        self.details[(self.r, self.c)] = [self.name.capitalize(), self.age, self.gender.capitalize(),self.phone]
                     else:
                         print('Thank you for visiting Book-My-Show, Please Visit Again!!')
 
@@ -112,15 +111,13 @@ class ticket_counter:
                         self.choose = input('--> Your ticket price is 10$, if you want to confirm, Please type Yes/No: ')
                         while self.choose.isalpha() == False:
                             print('Please choose your options in alphabets only!')
-                            self.choose = input(
-                                '--> Your ticket price is 10$, if you want to confirm, Please type Yes/No: ')
+                            self.choose = input('--> Your ticket price is 10$, if you want to confirm, Please type Yes/No: ')
                             continue
                         self.choose = self.choose.casefold()
                         if self.choose == 'yes':
                             self.current_income = self.current_income + 10
                             self.row[self.r - 1][self.c - 1] = 'B'
-                            self.details[(self.r, self.c)] = [self.name.capitalize(), self.age,
-                                                              self.gender.capitalize(), self.phone]
+                            self.details[(self.r, self.c)] = [self.name.capitalize(), self.age,self.gender.capitalize(), self.phone]
                         else:
                             print('Thank you for visiting Book-My-Show, Please Visit Again!!')
 
@@ -134,8 +131,7 @@ class ticket_counter:
                         if self.choose == 'yes':
                             self.current_income = self.current_income + 10
                             self.row[self.r - 1][self.c - 1] = 'B'
-                            self.details[(self.r, self.c)] = [self.name.capitalize(), self.age,
-                                                              self.gender.capitalize(), self.phone]
+                            self.details[(self.r, self.c)] = [self.name.capitalize(), self.age,self.gender.capitalize(), self.phone]
                         else:
                             print('Thank you for visiting Book-My-Show, Please Visit Again!!')
 
@@ -154,7 +150,7 @@ class ticket_counter:
         self.percentage = (self.total / self.total_tickets) * 100
         print(f'Booking percentage is : {self.percentage}')
         print(f'current income is : {self.current_income} $')
-        self.total_income = 10
+        self.total_income = 0
         if self.total_tickets <= 60:
             self.total_income = self.total_tickets * 10
         else:
