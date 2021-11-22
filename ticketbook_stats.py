@@ -1,3 +1,4 @@
+import re
 class ticket_counter:
     def __init__(self):
         print(' Welcome to Book-My-Show '.center(40, '*'))
@@ -25,7 +26,7 @@ class ticket_counter:
                 self.total_tickets += 1  # total number of available seats in theatre
             self.current_income = 0
 
-    def show_seats(self):  # prints seats in square form
+    def show_seats(self):
         print(' Please Check Out The Seats Available/Booked '.center(80, '*'))
         for j in range(self.columns+1):
             print(j, end=" ")
@@ -75,12 +76,14 @@ class ticket_counter:
             while self.gender.casefold() not in ['male', 'female', 'other']:
                 print('Please Choose Correct Gender!!')
                 self.gender = input('--> Enter your Gender: ')
-                continue  ##Continue is for exiting loop##
+                continue
 
             self.phone = input('--> Please Enter your phone number: ')
-            while self.phone.isdigit() == False:
-                print('Please Enter Your phone Number in Numbers only!')
+            self.mat = re.fullmatch("[6-9][0-9]{9}", self.phone)
+            while self.phone.isdigit() == False or self.mat==None:
+                print('Please Enter Your Phone Number in 10 Digits only!')
                 self.phone = input('--> Please Enter Your Phone Number: ')
+                self.mat = re.fullmatch("[6-9][0-9]{9}", self.phone)
                 continue
             self.phone = int(self.phone)
 
@@ -150,13 +153,13 @@ class ticket_counter:
         self.percentage = (self.total / self.total_tickets) * 100
         print(f'Booking percentage is : {self.percentage}')
         print(f'current income is : {self.current_income} $')
-        self.total_income = 0
+        self.total_income = 10
         if self.total_tickets <= 60:
             self.total_income = self.total_tickets * 10
         else:
-            self.z = self.total_tickets // 2
-            self.y = self.total_tickets - self.z
-            self.total_income = (self.z * 10 + self.y * 8)
+            self.front=(self.rows//2)*self.columns
+            self.back = self.total_tickets - self.front
+            self.total_income = (self.front * 10 + self.back * 8)
         print(f'Total income is: {self.total_income} $')
 
     def get_details(self):
