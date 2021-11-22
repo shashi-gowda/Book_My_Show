@@ -129,7 +129,7 @@ class ticket_counter:
                             continue
                         self.choose = self.choose.casefold()
                         if self.choose == 'yes':
-                            self.current_income = self.current_income + 10
+                            self.current_income = self.current_income + 8
                             self.row[self.r - 1][self.c - 1] = 'B'
                             self.details[(self.r, self.c)] = [self.name.capitalize(), self.age,self.gender.capitalize(), self.phone]
                         else:
