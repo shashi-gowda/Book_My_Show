@@ -5,7 +5,7 @@ class ticket_counter:
         self.rows = input("--> Enter No.of Rows: ")  # no of rows in theatre
         self.columns = input("--> Enter No.of Columns: ")  # no of columns in rows
         while self.rows=='0' or self.columns=='0' or self.rows.isdigit() == False or self.columns.isdigit() == False:
-            print('\n** Only Number inputs are allowed **')
+            print('\n** Only Non Zero Number inputs are allowed **')
             self.rows = input('--> Enter No. of Rows: ')
             self.columns = input('--> Enter No. of columns: ')
             continue
