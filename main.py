@@ -2,11 +2,7 @@ import ticketbook_stats
 Okay = ticketbook_stats.ticket_counter()
 while True:
     print('==================================================')
-    print('1. Show the seats')
-    print('2. Buy a tickets')
-    print('3. Statistics')
-    print('4. Show booked ticket user info')
-    print('0. Exit')
+    print(" 1. Show the seats\n 2. Buy a tickets\n 3. Statistics\n 4. Show booked ticket user info\n 0. Exit\n")
     choice = input('Please select your choice from above Options: ')
     while choice.isdigit()==False:
         print('Please choose the choice in numbers')
