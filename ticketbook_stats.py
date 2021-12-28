@@ -29,8 +29,8 @@ class ticket_counter:
     def show_seats(self):
         print(' Please Check Out The Seats Available/Booked '.center(80, '*'))
         print(end='  ')
-        for j in range(1,self.columns+1):
-            print(j, end=" ")
+        for j in range(self.columns):
+            print(j+1, end=" ")
         print()
         for i in range(self.rows):
             print(i+1, end=" ")
