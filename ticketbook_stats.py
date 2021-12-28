@@ -90,7 +90,7 @@ class ticket_counter:
 
             self.confirm = input('--> Confirm Your Ticket_Booking (Yes/No): ')
             while self.confirm.isalpha() == False:
-                print('Please choose Alphabet Yes/No !')
+                print('Please enter word Yes/No !')
                 self.confirm = input('--> Confirm Your Booking by Typing Yes/No: ')
                 continue
             self.confirm = self.confirm.casefold()
